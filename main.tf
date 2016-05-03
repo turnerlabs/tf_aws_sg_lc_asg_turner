@@ -67,7 +67,7 @@ resource "aws_launch_configuration" "launch_config" {
 
 resource "aws_autoscaling_group" "main_asg" {
   # We want this to explicitly depend on the launch config above
-  depends_on            = ["aws_launch_configuration.launch_config", "aws_elb.elb"]
+  depends_on            = ["aws_launch_configuration.launch_config"]
   name                  = "${var.tag_product}-${var.tag_environment}-tf"
 
   # The chosen availability zones *must* match the AZs the VPC subnets are tied to.
