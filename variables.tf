@@ -26,39 +26,6 @@ variable "vpc_id" {
 variable "vpc_cidr_block" {
   description = "The VPC CIDR Block"
 }
-#
-# ELB Variables
-#
-
-variable "elb_listener_lb_port" {
-  description = "The port the ELB will listen to incoming traffic on"
-}
-variable "elb_listener_instance_port" {
-  description = "The port the elb will forward traffic to"
-}
-variable "elb_health_check_healthy_threshold" {
-  description = "The number of checks before the instance is declared healthy"
-  default = "2"
-}
-variable "elb_health_check_unhealthy_threshold" {
-  description = "The number of checks before the instance is declared unhealthy"
-  default = "2"
-}
-variable "elb_health_check_timeout" {
-  description = "The length of time before the check times out"
-  default = "3"
-}
-variable "elb_health_check_target" {
-  description = "The target of the heath check. usually something like HTTP:<instance_port>/healthcheck"
-}
-variable "elb_health_check_interval" {
-  description = "The interval between health checks"
-  default = "30"
-}
-variable "elb_internal_bool" {
-  description = "If the ELB is going to be internal or not"
-  default = "true"
-}
 
 #
 # Launch Configuration Variables
