@@ -49,9 +49,9 @@ resource "aws_security_group" "sg_instance" {
     Environment = "${var.tag_environment}"
     Creator     = "${var.tag_creator}"
     Customer    = "${var.tag_customer}"
-    Owner       = "${var.tag_owner}"
+    Team        = "${var.tag_team}"
     Product     = "${var.tag_product}"
-    Costcenter  = "${var.tag_costcenter}"
+    Billing     = "${var.tag_billing}"
   }
  }
 
@@ -112,7 +112,7 @@ resource "aws_autoscaling_group" "main_asg" {
     propagate_at_launch = true
   }
   tag {
-    key   = "Owner"
+    key   = Team"
     value = "${var.tag_team}"
     propagate_at_launch = true
   }
