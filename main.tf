@@ -112,7 +112,7 @@ resource "aws_autoscaling_group" "main_asg" {
     propagate_at_launch = true
   }
   tag {
-    key   = Team"
+    key   = "Team"
     value = "${var.tag_team}"
     propagate_at_launch = true
   }
